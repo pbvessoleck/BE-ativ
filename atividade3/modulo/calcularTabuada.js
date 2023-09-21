@@ -5,20 +5,24 @@
  * Versão 1.0
  **************************************************************************/
 
-function calcularTabuada(){
-    let tabuada1 = tabuadaInicial
-    let tabuada2 = tabuadaFinal
-    let contador1 = contadorInicial
-    let contador2 = contadorFinal
+function calcularTabuada(tabuadaInicial,tabuadaFinal,contadorInicial,contadorFinal){
+    let tabuada1 = Number(tabuadaInicial)
+    let tabuada2 = Number(tabuadaFinal)
+    let contador1 = Number(contadorInicial)
+    let contador2 = Number(contadorFinal)
 
-    if(tabuada1>100 || tabuada2>100 || tabuada1<2 || tabuada2<2){
-        console.log('ERRO!! Só é permitido a entrada de valores entre 2 e 100')
-    }else if(tabuada1=='' || tabuada2=='' || contador1=='' || contador2 == ''){
-        console.log('ERRO!! É obrigatório o preenchimento de todos os campos')
-    }else if(contador1>50 || contador1<1 || contador2>50 || contador2<1){
-        console.log('ERRO! Só é aceito valores entre 1 e 50')
-    }else{
-        
+
+    for (let tabuada = tabuadaInicial; tabuada <= tabuadaFinal; tabuada++) {
+        console.log(`Tabuada do [${tabuada}]`);
+    for(let contador = contador1; contador<=contador2; contador++){
+        console.log(`${tabuada} x ${contador} = ${tabuada * contador1}`);
+        }
+    }
+    
     }
 
-    }
+    
+
+    module.exports={
+    calcularTabuada
+    };

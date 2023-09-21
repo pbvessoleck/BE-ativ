@@ -1,4 +1,4 @@
-/****************************************************************************
+2/****************************************************************************
  * Objetivo: Fazer o cálculo do IMC de uma pessoa
  * Data: 13/09/2023
  * Autora: Paloma
@@ -15,12 +15,23 @@ var entradaDados = readline.createInterface({
 
 
 entradaDados.question('Digite o seu peso: ', function(valorPeso){
-    let peso = valorPeso;
+    let peso = Number(valorPeso);
 
     entradaDados.question('Digite a sua altura: ', function(valorAltura){
-        let altura = valorAltura;
+        let altura = Number(valorAltura);
 
-        let imc = calculoImc.calcularImc(peso,altura)
-        entradaDados.close
-    })
-})
+        if(peso == '' || altura == ''){
+            console.log('ERRO!! Insira algum valor');
+        } else if(isNaN(altura) || isNaN(peso)){
+            console.log('ERRO!! Digite apenas valores numéricos')
+        }else{
+           const imc = calculoImc.calcularImc(valorPeso,valorAltura)
+            const classificacao = calculoImc.classificarImc(imc)
+            console.log('IMC: '+ `${imc}` + classificacao)
+            entradaDados.close()
+        }
+    }
+    )}
+)
+    
+    
